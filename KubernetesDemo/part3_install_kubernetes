@@ -1,0 +1,56 @@
+Part III - Only Node
+Step 5) TO BE PERFORMED ONLY ON NODE VMs
+
+# Join nodes to Master to setup a cluster. (Note- IP, token and cert  will be different different deployments)
+
+kubeadm join 10.3.36.114:6443 --token qnjp0w.98rgj2g7pks6ongl --discovery-token-ca-cert-hash sha256:bd4dcd3909ef1ab5d16f34f3af33fac14575752231b5e5e00eddfee3e5582141
+
+Run following command on master and you should see nodes joined the cluster and are in Ready state.
+It take couple of minutes for nodes to be Ready after running "kubeadmin join" command.
+
+# kubectl get nodes
+NAME                  STATUS     ROLES    AGE     VERSION
+k8s-training-master   Ready      master   7m53s   v1.13.4
+k8s-training-node1    Ready      <none>   61s     v1.13.4
+k8s-training-node2    NotReady   <none>   3s      v1.13.4
+
+
+===========================================================================================
+# Deploy busybox and check functioning of DNS (need to run from client machine or Master as we already have configure client on Master)
+
+busybox 
+
+kubectl create -f https://k8s.io/examples/admin/dns/busybox.yaml
+kubectl exec -ti busybox -- nslookup kubernetes.default
+
+==========================================================================================
+Install HELM and TILLER, To be installed on Control VM (VM other than KubeCluster set above)
+
+=> Helm 
+
+==> Install Helm on a client
+
+wget https://storage.googleapis.com/kubernetes-helm/helm-v2.13.0-linux-amd64.tar.gz
+tar xvzf helm-v2.13.0-linux-amd64.tar.gz
+cp linux-amd64/helm /usr/local/bin/helm
+
+Install kubectl on client (controlVM) and configure (Configure kubernetes yum repository as given above in Step 2)
+
+yum install kubectl -y --nogpgcheck
+
+mkdir -p $HOME/.kube
+scp <YourMaster'sIP>:/etc/kubernetes/admin.conf $HOME/.kube/config
+
+
+=> tiller
+
+kubectl create serviceaccount --namespace kube-system tiller
+
+kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+
+helm init --service-account tiller
+
+======================== Install sample application
+helm fetch --untar stable/tomcat
+helm install --name mytomcat stable/tomcat
+helm delete mytomcat

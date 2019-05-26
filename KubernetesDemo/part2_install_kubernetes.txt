@@ -1,0 +1,77 @@
+Part II - Only Master
+========================================================================================== 
+Step 3) TO BE PERFORMED ONLY ON MASTER
+
+# initialise cluster using kubeadm
+
+kubeadm init --apiserver-advertise-address <yourmasternodeIP> --pod-network-cidr=192.168.0.0/16
+
+Example:
+kubeadm init --apiserver-advertise-address 10.3.36.34 --pod-network-cidr=192.168.0.0/16
+
+Above command output "kubeadm join" command as below. Preserve this, as this command will be run on Nodes in order to add them to the cluster 
+
+Example Output:
+
+You can now join any number of machines/Nodes by running the following on each node
+as root: (Note: kubeadm join command will have different IP and token for each deployment)
+
+   kubeadm join 10.3.36.114:6443 --token qnjp0w.98rgj2g7pks6ongl --discovery-token-ca-cert-hash sha256:bd4dcd3909ef1ab5d16f34f3af33fac14575752231b5e5e00eddfee3e5582141
+
+If you forgot to save kubeadm join command, then run below to get new one. Run below command on Master
+
+   kubeadm token create --print-join-command
+
+kubeadm join 10.3.36.114:6443 --token 3jnw0y.vjj4ygqv2t29jhl8 --discovery-token-ca-cert-hash sha256:bd4dcd3909ef1ab5d16f34f3af33fac14575752231b5e5e00eddfee3e5582141
+
+==========================================================================================
+Step 4) TO BE PERFORMED ONLY ON MASTER
+
+# Add kubectl (client) configuration on master so that kubectl command can work on master and same machine can work as client.
+
+mkdir -p $HOME/.kube
+cp /etc/kubernetes/admin.conf $HOME/.kube/config
+
+if you now run the below command on master, you will see, a master node but is in NotReady status, because it requires POD-network to be Ready
+
+# kubectl get nodes
+NAME                  STATUS     ROLES    AGE    VERSION
+k8s-training-master   NotReady   master   100s   v1.13.4
+
+
+# Add overlay network cni
+
+export kubever=$(kubectl version | base64 | tr -d '\n')
+kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
+
+# Add Dashboard
+
+kubectl apply -f https://gist.githubusercontent.com/initcron/32ff89394c881414ea7ef7f4d3a1d499/raw/baffda78ffdcaf8ece87a76fb2bb3fd767820a3f/kube-dashboard.yaml
+
+kubectl describe svc kubernetes-dashboard -n kube-system
+
+---------------------------------------------
+Install WeaveNet POD network with specific IP Range
+
+=> This requires for PODs to work in cluster. There are many network types like Flannel, Calico, Weave-net.
+
+=> Weave Net with specific IP range
+The default subnet of weave-net 10.32.0.0/12 overlaps with existing route 10.0.0.0/8 on host hence we will use IPALLOC_RANGE to use different subnet for pod network. Details are at below URL.
+
+https://www.weave.works/docs/net/latest/kubernetes/kube-addon/#configuration-options
+
+IPALLOC_RANGE - the range of IP addresses used by Weave Net and the subnet they are placed in (CIDR format; default 10.32.0.0/12)
+
+
+Run Following on Master Node
+
+IPALLOC_RANGE=192.168.0.0/16
+# kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')&env.IPALLOC_RANGE=192.168.0.0/16"
+
+Run below command again to see if master is ready
+
+# kubectl get nodes                                                                                       NAME                  STATUS   ROLES    AGE     VERSION
+k8s-training-master   Ready    master   3m27s   v1.13.4
+
+
+==========================================================================================

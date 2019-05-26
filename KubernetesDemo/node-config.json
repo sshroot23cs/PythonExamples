@@ -1,0 +1,21 @@
+{
+  "generic_password": "Dell0SS!",
+  "nodes": [
+    {
+      "service_tag": "",
+      "hostname": "k8s-training-master",
+      "node_type": "master",
+      "mac_address0": "",
+      "pvt_ip": "",
+      "pub_ip": ""
+    },
+    {
+      "service_tag": "",
+      "hostname": "k8s-training-node",
+      "node_type": "slave",
+      "mac_address0": "",
+      "pvt_ip": "",
+      "pub_ip": ""
+    }
+  ]
+}

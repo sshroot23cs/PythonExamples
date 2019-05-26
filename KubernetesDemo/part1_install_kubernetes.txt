@@ -1,0 +1,92 @@
+PART I - (Master + Node)
+
+All Latest
+Centos 7.6
+Kubernetes v1.13.4
+Docker 18.09
+
+Master: 192.168.182.130
+Node: 192.168.182.132
+
+Step 1) =========================================================
+TO BE PERFORMED ON ALL VMs MASTER + NODES
+yum update -y
+
+
+# Enable IPVS module. Required for overlay network and kube-proxy to work
+
+yum install ipvsadm -y
+
+vi /etc/modules-load.d/ip_vs.conf
+ip_vs
+ip_vs_rr
+ip_vs_wrr
+ip_vs_sh
+br_netfilter
+nf_conntrack_ipv4
+
+##service systemd-modules-load restart
+
+# Enable bridge netfilter module
+## modprobe br_netfilter
+## echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables
+
+vi /usr/lib/sysctl.d/00-system.conf
+net.bridge.bridge-nf-call-iptables = 1
+
+# Disable SELINUX
+sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+
+# Disable swap partition
+swapoff -a
+<comment lines for swap partition in /etc/fstab>
+
+# Disable firewall service
+disable firewall service
+
+systemctl  disable firewalld
+
+# Reboot machine
+
+# check after reboot if all modules are loaded
+lsmod | grep '^\(ip_vs\|ip_vs_rr\|ip_vs_wrr\|ip_vs_sh\|nf_conntrack_ipv4\|br_netfilter\)'
+
+# lsmod | grep '^\(ip_vs\|ip_vs_rr\|ip_vs_wrr\|ip_vs_sh\|nf_conntrack_ipv4\|br_netfilter\)'
+nf_conntrack_ipv4      15053  0
+br_netfilter           22256  0
+ip_vs_sh               12688  0
+ip_vs_wrr              12697  0
+ip_vs_rr               12600  0
+ip_vs                 145497  6 ip_vs_rr,ip_vs_sh,ip_vs_wrr
+
+# sysctl -a | grep bridge-nf-call-iptables
+net.bridge.bridge-nf-call-iptables = 1
+
+
+Step 2) ==========================================================================================
+TO BE PERFORMED ON ALL VMs MASTER + NODES
+
+Install Docker and Kubernetes
+
+yum install -y yum-utils device-mapper-persistent-data lvm2
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+Setup Kubernetes repo and install 
+
+cat << EOF >/etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
+https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOF
+
+yum install -y --nogpgcheck docker-ce kubelet kubeadm kubectl kubernetes-cni
+
+systemctl start docker && systemctl enable docker
+systemctl start kubelet && systemctl enable kubelet
+
+
