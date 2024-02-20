@@ -1,0 +1,12 @@
+# name type value
+oneplus-category:
+  type: "xpath"
+  value: "//span[normalize-space()='OnePlus']"
+search_box:
+  type: "id"
+  value: "search"
+search_button:
+  type: "id"
+  value: "search_button"
+
+
