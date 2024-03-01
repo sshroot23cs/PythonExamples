@@ -32,6 +32,7 @@ def test_loop_browser_windows(browser):
     for i in range(5):
         browser.get(urls[i])
         browser.maximize_window()
+        browser.save_screenshot("screenshot_{}.png".format(i))
         sleep(10)
 
     cnt = len(browser.window_handles)
