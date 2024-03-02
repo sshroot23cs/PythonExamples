@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-class MainPage:
+class CommonPageElements:
     def __init__(self):
         pass
 

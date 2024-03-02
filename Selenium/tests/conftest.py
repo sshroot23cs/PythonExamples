@@ -2,13 +2,23 @@ import os
 import base64
 import pytest
 from selenium import webdriver
-from src.pageone import PageOne
+from src.pages import Pages
 import logging
 from src.utilities.customLogger import CustomLogger
 
 logger = CustomLogger(logging.DEBUG).get_logger()
 
 SCREENSHOT_PATH = os.path.join(os.path.dirname(__file__), "saved_screenshots")
+
+def pytest_addoption(parser):
+    parser.addoption("--browser", action="store", default="chrome", help="Type in browser type")
+    parser.addoption("--env", action="store", default="qa", help="dev / qa / stage / prod")
+    # parser.addoption("--log-level", action="store", default="INFO", help="Set the log level")
+    # parser.addoption("--start-maximized", action="store_true", help="Start the browser maximized")
+    # parser.addoption("--disable-notifications", action="store_true", help="Disable browser notifications")
+    # parser.addoption("--disable-extensions", action="store_true", help="Disable browser extensions")
+    # parser.addoption("--selenium_capture_debug", action="store", default="never",
+    #                  help="Capture debug information for Selenium tests")
 
 @pytest.fixture
 def driver_args():
@@ -18,12 +28,22 @@ def driver_args():
             '--disable-extensions',
             '--selenium_capture_debug=always']
 
+
+@pytest.fixture(scope="session")
+def browser_type(request):
+    logger.info("Browser type: " + request.config.getoption("--browser").lower())
+    return request.config.getoption("--browser").lower()
+
 @pytest.fixture(scope="function")
-def browser(request):
+def browser(request, browser_type):
     request.node.name = request.node.name.replace(" ", "_")
     logger.info("******** Test Case: " + request.node.name + " ********")
     # Initialize ChromeDriver
-    driver = webdriver.Chrome()
+    if browser_type == "chrome":
+        driver = webdriver.Chrome()
+    elif browser_type == "firefox":
+        driver = webdriver.Firefox()
+
     # Wait implicitly for elements to be ready before attempting interactions
     driver.implicitly_wait(10)
 
@@ -34,9 +54,9 @@ def browser(request):
     driver.quit()
 
 @pytest.fixture(scope="function")
-def page_one_object():
-    page_one_obj = PageOne()
-    return page_one_obj
+def get_pages_object():
+    pages_obj = Pages()
+    return pages_obj
 
 
 #

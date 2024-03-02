@@ -1,9 +1,9 @@
 from src.common_page_elements import CommonPageElements
 from src.helper import Helper
 
-class PageOne(CommonPageElements):
+class PageTwo(CommonPageElements):
 
-    LOCATOR_FILE = "page1_locators.yaml"
+    LOCATOR_FILE = "page2_locators.yaml"
 
     def __init__(self):
         pageHelper = Helper()

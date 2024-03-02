@@ -5,7 +5,7 @@ from src.utilities.customLogger import CustomLogger
 logger = CustomLogger(logging.DEBUG).get_logger()
 
 class TestSample002:
-    def test_sample_002(self, browser, page_one_object):
+    def test_sample_002(self, browser, get_pages_object):
         urls = ["https://bstackdemo.com/",
                 "https://www.google.com/",
                 "https://www.facebook.com/",

@@ -5,7 +5,7 @@ from src.utilities.customLogger import CustomLogger
 logger = CustomLogger(logging.DEBUG).get_logger()
 
 class TestSample001:
-    def test_sample_001(self, browser, page_one_object):
+    def test_sample_001(self, browser, get_pages_object):
 
         logger.info("This is a test log message")
 
@@ -60,8 +60,8 @@ class TestSample001:
         assert_json(aa, bb)
         browser.get("https://bstackdemo.com/")
         browser.maximize_window()
-        page_data = page_one_object.get_page_locator(locator_name="oneplus-category")
-        page_ele = page_one_object.get_page_element(browser, page_data)
+        page_data = get_pages_object.page_one.get_page_locator(locator_name="oneplus-category")
+        page_ele = get_pages_object.page_one.get_page_element(browser, page_data)
         page_ele.click()
         print(page_data)
         assert "OnePlus" in browser.title, "Title is not matching"
