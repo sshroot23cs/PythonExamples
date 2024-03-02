@@ -1,0 +1,24 @@
+2024-03-02 21:51:55,152 : INFO : src.utilities.customLogger : ******** Test Case: test_sample_001 ********
+2024-03-02 21:51:56,022 : INFO : src.utilities.customLogger : This is a test log message
+2024-03-02 21:51:56,022 : INFO : src.utilities.customLogger : Comparing Json array
+2024-03-02 21:51:56,026 : INFO : src.utilities.customLogger : Comparing Json array
+2024-03-02 21:51:56,026 : INFO : src.utilities.customLogger : Comparing Json array
+2024-03-02 21:51:56,026 : INFO : src.utilities.customLogger : Comparing Json array
+2024-03-02 21:51:56,026 : INFO : src.utilities.customLogger : Comparing Json array
+2024-03-02 21:51:56,026 : INFO : src.utilities.customLogger : Comparing Json array
+2024-03-02 21:51:56,026 : INFO : src.utilities.customLogger : Comparing Json array
+2024-03-02 21:51:56,026 : INFO : src.utilities.customLogger : Comparing Json array
+2024-03-02 21:51:56,026 : INFO : src.utilities.customLogger : Comparing Json array
+2024-03-02 21:51:56,026 : INFO : src.utilities.customLogger : Comparing Json array
+2024-03-02 21:51:56,026 : INFO : src.utilities.customLogger : Comparing Json array
+2024-03-02 21:51:56,026 : INFO : src.utilities.customLogger : Comparing Json array
+2024-03-02 21:51:56,026 : INFO : src.utilities.customLogger : Comparing Json array
+2024-03-02 21:51:56,026 : INFO : src.utilities.customLogger : Comparing Json array
+2024-03-02 21:51:56,026 : INFO : src.utilities.customLogger : Comparing Json array
+2024-03-02 21:51:56,026 : INFO : src.utilities.customLogger : Comparing Json array
+2024-03-02 21:51:59,015 : INFO : src.utilities.customLogger : ******** Test Case: test_sample_002 ********
+2024-03-02 21:52:02,245 : INFO : src.utilities.customLogger : Open browser title: StackDemo
+2024-03-02 21:52:05,679 : INFO : src.utilities.customLogger : Open browser title: Jobs - Recruitment - Job Search - Employment - Job Vacancies - Naukri.com
+2024-03-02 21:52:05,694 : INFO : src.utilities.customLogger : Open browser title: Facebook – log in or sign up
+2024-03-02 21:52:05,714 : INFO : src.utilities.customLogger : Open browser title: Google
+2024-03-02 21:52:05,737 : INFO : src.utilities.customLogger : Open browser title: LinkedIn: Log In or Sign Up

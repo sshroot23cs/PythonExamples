@@ -1,16 +1,72 @@
+import logging
 from time import sleep
+from src.utilities.assert_json import assert_json
+from src.utilities.customLogger import CustomLogger
+logger = CustomLogger(logging.DEBUG).get_logger()
 
-def test_sample_001(browser, page_one_object, get_logger):
-    logger = get_logger
+class TestSample001:
+    def test_sample_001(self, browser, page_one_object):
 
-    logger.info("This is a test log message")
-    browser.get("https://bstackdemo.com/")
-    browser.maximize_window()
-    page_data = page_one_object.get_page_locator(locator_name="oneplus-category")
-    page_ele = page_one_object.get_page_element(browser, page_data)
-    page_ele.click()
-    print(page_data)
-    assert "OnePlus" in browser.title, "Title is not matching"
-    sleep(10)
-    logger.info("This is a test log message end")
+        logger.info("This is a test log message")
+
+        aa = [
+            {'id': '!anything', 'name': 'Main', 'description': 'Main component', 'intentId': '',
+             'nodes': [{'id': '!anything', 'name': 'start', 'nodeType': 'START_NODE'},
+                       {'id': '!anything', 'name': 'Question & Answer',
+                        'nodeType': 'RECOGNITION_NODE'},
+                       {'id': '!anything', 'name': 'Message', 'nodeType': 'MESSAGE_NODE'},
+                       {'id': '!anything', 'name': 'External Actions',
+                        'nodeType': 'EXTERNAL_ACTION_NODE'}], 'numNodes': 4},
+            {'id': '!anything', 'name': 'TestA', 'description': '', 'intentId': '', 'nodes': [
+                {'id': '!anything', 'name': 'External Actions_02',
+                 'nodeType': 'EXTERNAL_ACTION_NODE'},
+                {'id': '!anything', 'name': 'Message_02', 'nodeType': 'MESSAGE_NODE'},
+                {'id': '!anything', 'name': 'Question & Answer_02',
+                 'nodeType': 'RECOGNITION_NODE'},
+                {'id': '!anything', 'name': 'start', 'nodeType': 'START_NODE'}], 'numNodes': 4},
+            {'id': '!anything', 'name': 'NO_INTENT', 'description': 'intent',
+             'intentId': '!anything',
+             'nodes': [{'id': '!anything', 'name': 'start', 'nodeType': 'START_NODE'},
+                       {'id': '!anything', 'name': 'Question & Answer_01',
+                        'nodeType': 'RECOGNITION_NODE'},
+                       {'id': '!anything', 'name': 'Message_01', 'nodeType': 'MESSAGE_NODE'},
+                       {'id': '!anything', 'name': 'External Actions_01',
+                        'nodeType': 'EXTERNAL_ACTION_NODE'}], 'numNodes': 4}
+            ]
+        bb = [
+            {'id': '!anything', 'name': 'Main', 'description': 'Main component', 'intentId': '',
+             'nodes': [{'id': '!anything', 'name': 'start', 'nodeType': 'START_NODE'},
+                       {'id': '!anything', 'name': 'Question & Answer',
+                        'nodeType': 'RECOGNITION_NODE'},
+                       {'id': '!anything', 'name': 'Message', 'nodeType': 'MESSAGE_NODE'},
+                       {'id': '!anything', 'name': 'External Actions',
+                        'nodeType': 'EXTERNAL_ACTION_NODE'}], 'numNodes': 4},
+            {'id': '!anything', 'name': 'TestA', 'description': '', 'intentId': '', 'nodes': [
+                {'id': '!anything', 'name': 'External Actions_02',
+                 'nodeType': 'EXTERNAL_ACTION_NODE'},
+                {'id': '!anything', 'name': 'Message_02', 'nodeType': 'MESSAGE_NODE'},
+                {'id': '!anything', 'name': 'Question & Answer_02',
+                 'nodeType': 'RECOGNITION_NODE'},
+                {'id': '!anything', 'name': 'start', 'nodeType': 'START_NODE'}], 'numNodes': 4},
+            {'id': '!anything', 'name': 'NO_INTENT', 'description': 'intent',
+             'intentId': '!anything',
+             'nodes': [{'id': '!anything', 'name': 'start', 'nodeType': 'START_NODE'},
+                       {'id': '!anything', 'name': 'Question & Answer_01',
+                        'nodeType': 'RECOGNITION_NODE'},
+                       {'id': '!anything', 'name': 'Message_01', 'nodeType': 'MESSAGE_NODE'},
+                       {'id': '!anything', 'name': 'External Actions_01',
+                        'nodeType': 'EXTERNAL_ACTION_NODE'}], 'numNodes': 4}
+            ]
+        assert_json(aa, bb)
+        browser.get("https://bstackdemo.com/")
+        browser.maximize_window()
+        page_data = page_one_object.get_page_locator(locator_name="oneplus-category")
+        page_ele = page_one_object.get_page_element(browser, page_data)
+        page_ele.click()
+        print(page_data)
+        assert "OnePlus" in browser.title, "Title is not matching"
+        sleep(10)
+        logger.info("This is a test log message end")
+
+
 

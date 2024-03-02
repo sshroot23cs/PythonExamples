@@ -3,8 +3,10 @@ import base64
 import pytest
 from selenium import webdriver
 from src.pageone import PageOne
-from src.utilities.customLogger import CustomLogger
 import logging
+from src.utilities.customLogger import CustomLogger
+
+logger = CustomLogger(logging.DEBUG).get_logger()
 
 SCREENSHOT_PATH = os.path.join(os.path.dirname(__file__), "saved_screenshots")
 
@@ -17,7 +19,9 @@ def driver_args():
             '--selenium_capture_debug=always']
 
 @pytest.fixture(scope="function")
-def browser():
+def browser(request):
+    request.node.name = request.node.name.replace(" ", "_")
+    logger.info("******** Test Case: " + request.node.name + " ********")
     # Initialize ChromeDriver
     driver = webdriver.Chrome()
     # Wait implicitly for elements to be ready before attempting interactions
@@ -33,11 +37,6 @@ def browser():
 def page_one_object():
     page_one_obj = PageOne()
     return page_one_obj
-
-@pytest.fixture(scope="function")
-def get_logger():
-    logger = CustomLogger(logging.DEBUG).get_logger()
-    return logger
 
 
 #

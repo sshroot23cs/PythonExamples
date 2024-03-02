@@ -1,4 +1,8 @@
 from time import sleep
+import logging
+from src.utilities.customLogger import CustomLogger
+
+logger = CustomLogger(logging.DEBUG).get_logger()
 
 class TestSample002:
     def test_sample_002(self, browser, page_one_object):
@@ -21,4 +25,5 @@ class TestSample002:
         for x in range(cnt):
             browser.switch_to.window(browser.window_handles[x])
             print(browser.title)
+            logger.info("Open browser title: {}".format(browser.title))
 

@@ -7,8 +7,8 @@ class CustomLogger:
         self.logger = logging.getLogger(__name__)
         self.logger.setLevel(self.log_level)
 
-        log_file_name = os.path.join(os.path.dirname(__file__), "../../Logs",  "automation.log")
-        file_handler = logging.FileHandler(log_file_name)
+        log_file_name = os.path.join(os.path.dirname(__file__), "../../logs", "automation.log")
+        file_handler = logging.FileHandler(log_file_name, mode='w')
         formatter = logging.Formatter('%(asctime)s : %(levelname)s : %(name)s : %(message)s')
         file_handler.setFormatter(formatter)
 
