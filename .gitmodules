@@ -1,6 +1,3 @@
-[submodule "ThreadingExample"]
-	path = ThreadingExample
-	url = https://github.com/sshroot23cs/ThreadingExample.git
 [submodule "DesignPatternsExample"]
 	path = DesignPatternsExample
 	url = https://github.com/sshroot23cs/DesignPatternsExample.git

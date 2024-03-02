@@ -3,6 +3,8 @@ import base64
 import pytest
 from selenium import webdriver
 from src.pageone import PageOne
+from src.utilities.customLogger import CustomLogger
+import logging
 
 SCREENSHOT_PATH = os.path.join(os.path.dirname(__file__), "saved_screenshots")
 
@@ -31,6 +33,12 @@ def browser():
 def page_one_object():
     page_one_obj = PageOne()
     return page_one_obj
+
+@pytest.fixture(scope="function")
+def get_logger():
+    logger = CustomLogger(logging.DEBUG).get_logger()
+    return logger
+
 
 #
 # def pytest_selenium_capture_debug(item, report, extra):
