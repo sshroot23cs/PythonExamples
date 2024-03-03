@@ -1,25 +1,23 @@
-2024-03-02 22:27:30,544 : INFO : src.utilities.customLogger : Browser type: firefox
-2024-03-02 22:27:30,545 : INFO : src.utilities.customLogger : ******** Test Case: test_sample_001 ********
-2024-03-02 22:27:31,733 : INFO : src.utilities.customLogger : This is a test log message
-2024-03-02 22:27:31,733 : INFO : src.utilities.customLogger : Comparing Json array
-2024-03-02 22:27:31,733 : INFO : src.utilities.customLogger : Comparing Json array
-2024-03-02 22:27:31,733 : INFO : src.utilities.customLogger : Comparing Json array
-2024-03-02 22:27:31,733 : INFO : src.utilities.customLogger : Comparing Json array
-2024-03-02 22:27:31,733 : INFO : src.utilities.customLogger : Comparing Json array
-2024-03-02 22:27:31,733 : INFO : src.utilities.customLogger : Comparing Json array
-2024-03-02 22:27:31,733 : INFO : src.utilities.customLogger : Comparing Json array
-2024-03-02 22:27:31,733 : INFO : src.utilities.customLogger : Comparing Json array
-2024-03-02 22:27:31,733 : INFO : src.utilities.customLogger : Comparing Json array
-2024-03-02 22:27:31,733 : INFO : src.utilities.customLogger : Comparing Json array
-2024-03-02 22:27:31,733 : INFO : src.utilities.customLogger : Comparing Json array
-2024-03-02 22:27:31,733 : INFO : src.utilities.customLogger : Comparing Json array
-2024-03-02 22:27:31,733 : INFO : src.utilities.customLogger : Comparing Json array
-2024-03-02 22:27:31,733 : INFO : src.utilities.customLogger : Comparing Json array
-2024-03-02 22:27:31,734 : INFO : src.utilities.customLogger : Comparing Json array
-2024-03-02 22:27:31,734 : INFO : src.utilities.customLogger : Comparing Json array
-2024-03-02 22:27:35,979 : INFO : src.utilities.customLogger : ******** Test Case: test_sample_002 ********
-2024-03-02 22:27:39,891 : INFO : src.utilities.customLogger : Open browser title: StackDemo
-2024-03-02 22:27:39,899 : INFO : src.utilities.customLogger : Open browser title: 
-2024-03-02 22:27:39,905 : INFO : src.utilities.customLogger : Open browser title: 
-2024-03-02 22:27:39,909 : INFO : src.utilities.customLogger : Open browser title: 
-2024-03-02 22:27:39,915 : INFO : src.utilities.customLogger : Open browser title: 
+2024-03-03 11:02:50,356 : WARNING : MainThread: src.utilities.customLogger : Look out!
+2024-03-03 11:02:50,356 : WARNING : MainThread: src.utilities.customLogger : Look out!
+2024-03-03 11:02:50,358 : INFO : MainThread: src.utilities.customLogger : Browser type: chrome
+2024-03-03 11:02:50,358 : INFO : MainThread: src.utilities.customLogger : ******** Test Case: test_sample_002 ********
+2024-03-03 11:02:53,870 : INFO : MainThread: src.utilities.customLogger : Open browser title: StackDemo
+2024-03-03 11:02:56,172 : INFO : MainThread: src.utilities.customLogger : Open browser title: Jobs - Recruitment - Job Search - Employment - Job Vacancies - Naukri.com
+2024-03-03 11:02:56,260 : INFO : MainThread: src.utilities.customLogger : Open browser title: Facebook – log in or sign up
+2024-03-03 11:02:56,282 : INFO : MainThread: src.utilities.customLogger : Open browser title: Google
+2024-03-03 11:02:56,302 : INFO : MainThread: src.utilities.customLogger : Open browser title: LinkedIn: Log In or Sign Up
+inThread: src.utilities.customLogger : Open browser title: LinkedIn: Log In or Sign Up
+inThread: src.utilities.customLogger : Open browser title: LinkedIn: Log In or Sign Up
+inThread: src.utilities.customLogger : Open browser title: LinkedIn: Log In or Sign Up
+214 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-03 11:02:51,214 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-03 11:02:51,214 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-03 11:02:51,214 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-03 11:02:51,214 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-03 11:02:51,214 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-03 11:02:51,214 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-03 11:02:51,214 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+03 11:02:51,214 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+03 11:02:51,214 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+03 11:02:51,214 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
