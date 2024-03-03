@@ -1,10 +1,12 @@
 from time import sleep
 import logging
+import allure
 from src.utilities.customLogger import CustomLogger
 
 logger = CustomLogger(logging.DEBUG).get_logger()
 
 class TestSample002:
+    @allure.title("Second Test Case")
     def test_sample_002(self, browser, get_pages_object):
         urls = ["https://bstackdemo.com/",
                 "https://www.google.com/",

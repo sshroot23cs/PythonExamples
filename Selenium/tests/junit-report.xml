@@ -1,22 +1,16 @@
-import logging
-import allure
-from time import sleep
-from src.utilities.assert_json import assert_json
-from src.utilities.customLogger import CustomLogger
-logger = CustomLogger(logging.DEBUG).get_logger()
-
-
-class TestSample001:
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="2" time="12.835" timestamp="2024-03-03T16:52:51.952548" hostname="192.168.1.5"><testcase classname="tests.test_sample_01.TestSample001" name="test_sample_001" time="3.219"><failure message="AssertionError: Title is not matching&#10;assert 'OnePlus' in 'StackDemo'&#10; +  where 'StackDemo' = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session=&quot;4479d6e2c4a0aee912f8b00708a8ef9a&quot;)&gt;.title">self = &lt;test_sample_01.TestSample001 object at 0x110103490&gt;
+browser = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="4479d6e2c4a0aee912f8b00708a8ef9a")&gt;
+get_pages_object = &lt;src.pages.Pages object at 0x1101201c0&gt;
 
     @allure.title("First Test Case")
     def test_sample_001(self, browser, get_pages_object):
-
+    
         logger.info("This is a test log message")
-
+    
         aa = [
             {'id': '!anything', 'name': 'Main', 'description': 'Main component', 'intentId': '',
              'nodes': [{'id': '!anything', 'name': 'start', 'nodeType': 'START_NODE'},
-                       {'id': '!anything', 'name': 'Question & Answer',
+                       {'id': '!anything', 'name': 'Question &amp; Answer',
                         'nodeType': 'RECOGNITION_NODE'},
                        {'id': '!anything', 'name': 'Message', 'nodeType': 'MESSAGE_NODE'},
                        {'id': '!anything', 'name': 'External Actions',
@@ -25,13 +19,13 @@ class TestSample001:
                 {'id': '!anything', 'name': 'External Actions_02',
                  'nodeType': 'EXTERNAL_ACTION_NODE'},
                 {'id': '!anything', 'name': 'Message_02', 'nodeType': 'MESSAGE_NODE'},
-                {'id': '!anything', 'name': 'Question & Answer_02',
+                {'id': '!anything', 'name': 'Question &amp; Answer_02',
                  'nodeType': 'RECOGNITION_NODE'},
                 {'id': '!anything', 'name': 'start', 'nodeType': 'START_NODE'}], 'numNodes': 4},
             {'id': '!anything', 'name': 'NO_INTENT', 'description': 'intent',
              'intentId': '!anything',
              'nodes': [{'id': '!anything', 'name': 'start', 'nodeType': 'START_NODE'},
-                       {'id': '!anything', 'name': 'Question & Answer_01',
+                       {'id': '!anything', 'name': 'Question &amp; Answer_01',
                         'nodeType': 'RECOGNITION_NODE'},
                        {'id': '!anything', 'name': 'Message_01', 'nodeType': 'MESSAGE_NODE'},
                        {'id': '!anything', 'name': 'External Actions_01',
@@ -40,7 +34,7 @@ class TestSample001:
         bb = [
             {'id': '!anything', 'name': 'Main', 'description': 'Main component', 'intentId': '',
              'nodes': [{'id': '!anything', 'name': 'start', 'nodeType': 'START_NODE'},
-                       {'id': '!anything', 'name': 'Question & Answer',
+                       {'id': '!anything', 'name': 'Question &amp; Answer',
                         'nodeType': 'RECOGNITION_NODE'},
                        {'id': '!anything', 'name': 'Message', 'nodeType': 'MESSAGE_NODE'},
                        {'id': '!anything', 'name': 'External Actions',
@@ -49,13 +43,13 @@ class TestSample001:
                 {'id': '!anything', 'name': 'External Actions_02',
                  'nodeType': 'EXTERNAL_ACTION_NODE'},
                 {'id': '!anything', 'name': 'Message_02', 'nodeType': 'MESSAGE_NODE'},
-                {'id': '!anything', 'name': 'Question & Answer_02',
+                {'id': '!anything', 'name': 'Question &amp; Answer_02',
                  'nodeType': 'RECOGNITION_NODE'},
                 {'id': '!anything', 'name': 'start', 'nodeType': 'START_NODE'}], 'numNodes': 4},
             {'id': '!anything', 'name': 'NO_INTENT', 'description': 'intent',
              'intentId': '!anything',
              'nodes': [{'id': '!anything', 'name': 'start', 'nodeType': 'START_NODE'},
-                       {'id': '!anything', 'name': 'Question & Answer_01',
+                       {'id': '!anything', 'name': 'Question &amp; Answer_01',
                         'nodeType': 'RECOGNITION_NODE'},
                        {'id': '!anything', 'name': 'Message_01', 'nodeType': 'MESSAGE_NODE'},
                        {'id': '!anything', 'name': 'External Actions_01',
@@ -69,9 +63,9 @@ class TestSample001:
         page_ele.click()
         print(page_data)
         # allure.attach('screenshot', browser.get_screenshot_as_png())
-        assert "OnePlus" in browser.title, "Title is not matching"
-        sleep(10)
-        logger.info("This is a test log message end")
+&gt;       assert "OnePlus" in browser.title, "Title is not matching"
+E       AssertionError: Title is not matching
+E       assert 'OnePlus' in 'StackDemo'
+E        +  where 'StackDemo' = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="4479d6e2c4a0aee912f8b00708a8ef9a")&gt;.title
 
-
-
+test_sample_01.py:72: AssertionError</failure></testcase><testcase classname="tests.test_sample_02.TestSample002" name="test_sample_002" time="9.200" /></testsuite></testsuites>

@@ -1,14 +1,14 @@
 import os
-import base64
+import allure
 import pytest
 from selenium import webdriver
 from src.pages import Pages
 import logging
 from src.utilities.customLogger import CustomLogger
+import pathlib
 
+SCREENSHOT_PATH = os.path.join(os.path.dirname(__file__), "../screenshots")
 logger = CustomLogger(logging.DEBUG).get_logger()
-
-SCREENSHOT_PATH = os.path.join(os.path.dirname(__file__), "saved_screenshots")
 
 def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="chrome", help="Type in browser type")
@@ -49,6 +49,20 @@ def browser(request, browser_type):
 
     # Return the driver object at the end of setup
     yield driver
+
+    # # Do tear down (this code will be executed after each test):
+    # if request.session.testsfailed:
+    #     # Make the screenshot if test failed:
+    #     try:
+    #         browser.execute_script("document.body.bgColor = 'white';")
+    #
+    #         allure.attach(browser.get_screenshot_as_png(),
+    #                       name=request.function.__name__,
+    #                       attachment_type=allure.attachment_type.PNG
+    #                       )
+    #     except Exception as e:
+    #         pass  # just ignore
+
 
     # For cleanup, quit the driver
     driver.quit()

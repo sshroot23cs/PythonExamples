@@ -3,3 +3,4 @@ pytest
 pytest-selenium
 allure-pytest
 pytest-xdist
+pytest-failed-screenshot
