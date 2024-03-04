@@ -22,5 +22,5 @@ print("Input: Rank =", rank)
 print("Output:", end=" ")
 for i in range(rank):
     print("Rank {}: Name: {} Marks:{}".format(i+1, sorted_marks[i][0], sorted_marks[i][1]))
-    print(sorted_marks[i][0], end=", ")
+    # print(sorted_marks[i][0], end=", ")
 print("\t- find the first highest scored candidate names")
