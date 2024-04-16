@@ -1,16 +1,17 @@
 import logging
 import allure
+import pytest
 from time import sleep
 from src.utilities.assert_json import assert_json
 from src.utilities.customLogger import CustomLogger
-logger = CustomLogger(logging.DEBUG).get_logger()
 
 
 class TestSample001:
 
     @allure.title("First Test Case")
-    def test_sample_001(self, browser, get_pages_object):
-
+    @pytest.mark.smoke
+    def test_sample_001(self, request, browser, get_pages_object):
+        logger = CustomLogger(logging.DEBUG).get_logger(request)
         logger.info("This is a test log message")
 
         aa = [

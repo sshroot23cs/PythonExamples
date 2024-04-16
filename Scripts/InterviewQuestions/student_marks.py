@@ -24,3 +24,6 @@ for i in range(rank):
     print("Rank {}: Name: {} Marks:{}".format(i+1, sorted_marks[i][0], sorted_marks[i][1]))
     # print(sorted_marks[i][0], end=", ")
 print("\t- find the first highest scored candidate names")
+
+# get dict key by value
+# print(list(student_marks.keys())[list(student_marks.values()).index(70)])

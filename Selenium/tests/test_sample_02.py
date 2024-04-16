@@ -3,11 +3,10 @@ import logging
 import allure
 from src.utilities.customLogger import CustomLogger
 
-logger = CustomLogger(logging.DEBUG).get_logger()
-
 class TestSample002:
     @allure.title("Second Test Case")
-    def test_sample_002(self, browser, get_pages_object):
+    def test_sample_002(self, request, browser, get_pages_object):
+        logger = CustomLogger(logging.DEBUG).get_logger(request)
         urls = ["https://bstackdemo.com/",
                 "https://www.google.com/",
                 "https://www.facebook.com/",

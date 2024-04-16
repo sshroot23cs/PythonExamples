@@ -10,3 +10,13 @@ for i in str:
         print(i, end="")
 print()
 
+
+# check anagram
+str1 = "listen"
+str2 = "silent"
+# using join() + sorted()
+
+# checking anagram
+if sorted(str1) == sorted(str2):
+    print("Anagram")
+

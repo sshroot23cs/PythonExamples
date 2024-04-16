@@ -1,30 +1,30 @@
-2024-03-03 16:52:51,990 : WARNING : MainThread: src.utilities.customLogger : Look out!
-2024-03-03 16:52:51,990 : WARNING : MainThread: src.utilities.customLogger : Look out!
-2024-03-03 16:52:51,992 : INFO : MainThread: src.utilities.customLogger : Browser type: chrome
-2024-03-03 16:52:51,993 : INFO : MainThread: src.utilities.customLogger : ******** Test Case: test_sample_001 ********
-2024-03-03 16:52:52,705 : INFO : MainThread: src.utilities.customLogger : This is a test log message
-2024-03-03 16:52:52,708 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
-2024-03-03 16:52:52,708 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
-2024-03-03 16:52:52,708 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
-2024-03-03 16:52:52,708 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
-2024-03-03 16:52:52,708 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
-2024-03-03 16:52:52,708 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
-2024-03-03 16:52:52,708 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
-2024-03-03 16:52:52,708 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
-2024-03-03 16:52:52,708 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
-2024-03-03 16:52:52,708 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
-2024-03-03 16:52:52,708 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
-2024-03-03 16:52:52,709 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
-2024-03-03 16:52:52,709 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
-2024-03-03 16:52:52,709 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
-2024-03-03 16:52:52,709 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
-2024-03-03 16:52:52,709 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
-2024-03-03 16:52:55,586 : INFO : MainThread: src.utilities.customLogger : ******** Test Case: test_sample_002 ********
-2024-03-03 16:52:58,918 : INFO : MainThread: src.utilities.customLogger : Open browser title: StackDemo
-2024-03-03 16:53:04,491 : INFO : MainThread: src.utilities.customLogger : Open browser title: Jobs - Recruitment - Job Search - Employment - Job Vacancies - Naukri.com
-2024-03-03 16:53:04,513 : INFO : MainThread: src.utilities.customLogger : Open browser title: Facebook – log in or sign up
-2024-03-03 16:53:04,535 : INFO : MainThread: src.utilities.customLogger : Open browser title: Google
-2024-03-03 16:53:04,555 : INFO : MainThread: src.utilities.customLogger : Open browser title: LinkedIn: Log In or Sign Up
+2024-03-29 15:30:10,309 : WARNING : MainThread: src.utilities.customLogger : Look out!
+2024-03-29 15:30:10,309 : WARNING : MainThread: src.utilities.customLogger : Look out!
+2024-03-29 15:30:10,436 : INFO : MainThread: src.utilities.customLogger : Browser type: chrome
+2024-03-29 15:30:10,436 : INFO : MainThread: src.utilities.customLogger : ******** Test Case: test_sample_001 ********
+2024-03-29 15:30:15,172 : INFO : MainThread: src.utilities.customLogger : This is a test log message
+2024-03-29 15:30:15,174 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-29 15:30:15,174 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-29 15:30:15,174 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-29 15:30:15,174 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-29 15:30:15,174 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-29 15:30:15,174 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-29 15:30:15,174 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-29 15:30:15,175 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-29 15:30:15,179 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-29 15:30:15,179 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-29 15:30:15,179 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-29 15:30:15,179 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-29 15:30:15,184 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-29 15:30:15,184 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-29 15:30:15,184 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-29 15:30:15,184 : INFO : MainThread: src.utilities.customLogger : Comparing Json array
+2024-03-29 15:30:15,792 : INFO : MainThread: src.utilities.customLogger : ******** Test Case: test_sample_002 ********
+2024-03-29 15:30:19,294 : INFO : MainThread: src.utilities.customLogger : Open browser title: StackDemo
+2024-03-29 15:30:21,704 : INFO : MainThread: src.utilities.customLogger : Open browser title: Jobs - Recruitment - Job Search - Employment - Job Vacancies - Naukri.com
+2024-03-29 15:30:21,719 : INFO : MainThread: src.utilities.customLogger : Open browser title: Google
+2024-03-29 15:30:21,735 : INFO : MainThread: src.utilities.customLogger : Open browser title: Facebook – log in or sign up
+2024-03-29 15:30:21,755 : INFO : MainThread: src.utilities.customLogger : Open browser title: LinkedIn: Log In or Sign Up
 inThread: src.utilities.customLogger : Open browser title: LinkedIn: Log In or Sign Up
 inThread: src.utilities.customLogger : Open browser title: LinkedIn: Log In or Sign Up
 inThread: src.utilities.customLogger : Open browser title: LinkedIn: Log In or Sign Up

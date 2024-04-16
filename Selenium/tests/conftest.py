@@ -8,17 +8,12 @@ from src.utilities.customLogger import CustomLogger
 import pathlib
 
 SCREENSHOT_PATH = os.path.join(os.path.dirname(__file__), "../screenshots")
-logger = CustomLogger(logging.DEBUG).get_logger()
+
 
 def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="chrome", help="Type in browser type")
     parser.addoption("--env", action="store", default="qa", help="dev / qa / stage / prod")
-    # parser.addoption("--log-level", action="store", default="INFO", help="Set the log level")
-    # parser.addoption("--start-maximized", action="store_true", help="Start the browser maximized")
-    # parser.addoption("--disable-notifications", action="store_true", help="Disable browser notifications")
-    # parser.addoption("--disable-extensions", action="store_true", help="Disable browser extensions")
-    # parser.addoption("--selenium_capture_debug", action="store", default="never",
-    #                  help="Capture debug information for Selenium tests")
+
 
 @pytest.fixture
 def driver_args():
@@ -31,11 +26,26 @@ def driver_args():
 
 @pytest.fixture(scope="session")
 def browser_type(request):
+    logger = CustomLogger(logging.DEBUG).get_logger(request=pytest)
     logger.info("Browser type: " + request.config.getoption("--browser").lower())
     return request.config.getoption("--browser").lower()
 
+
+@pytest.fixture(scope="session")
+def get_base_url():
+    env = os.environ.get("TEST_ENV", "qa")
+    if env == "qa":
+        return "https://bstackdemo.com/"
+    elif env == "stage":
+        return "https://bstackdemo.com/"
+    elif env == "prod":
+        return "https://bstackdemo.com/"
+    else:
+        return "https://bstackdemo.com/"
+
 @pytest.fixture(scope="function")
 def browser(request, browser_type):
+    logger = CustomLogger(logging.DEBUG).get_logger(request=pytest)
     request.node.name = request.node.name.replace(" ", "_")
     logger.info("******** Test Case: " + request.node.name + " ********")
     # Initialize ChromeDriver
@@ -46,6 +56,8 @@ def browser(request, browser_type):
 
     # Wait implicitly for elements to be ready before attempting interactions
     driver.implicitly_wait(10)
+    driver.maximize_window()
+    driver.get(os.environ.get("MY_ENV_VARIABLE", "https://bstackdemo.com/"))
 
     # Return the driver object at the end of setup
     yield driver

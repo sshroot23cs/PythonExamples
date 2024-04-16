@@ -8,8 +8,6 @@ import requests
 import logging
 from src.utilities.customLogger import CustomLogger
 
-logger = CustomLogger(logging.DEBUG).get_logger()
-
 def read_json_file(filename):
     file_path = os.path.join(os.getcwd(), "resources/api_resources/" + filename)
     json_response = json.loads(open(file_path).read())
@@ -32,7 +30,6 @@ def download_file(url):
 def assert_json(my_json, your_json, trace=False):
 
     logger.info('Comparing Json array')
-
 
     # Should not be None
     assert your_json is not None

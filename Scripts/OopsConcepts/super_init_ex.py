@@ -14,5 +14,6 @@ class Child(Father, Mother):
         Mother.__init__(self)
         print("Child class")
 
+
 if __name__ == '__main__':
     c = Child()
